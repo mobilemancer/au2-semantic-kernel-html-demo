@@ -1,0 +1,49 @@
+{
+  "name": "frontend",
+  "description": "An Aurelia 2 client application.",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "???"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "aurelia": "latest",
+    "@aurelia/router": "latest"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "@aurelia/testing": "latest",
+    "htmlhint": "^1.1.4",
+    "stylelint": "^16.3.1",
+    "stylelint-config-standard": "^36.0.0",
+    "@aurelia/parcel-transformer": "latest",
+    "@parcel/transformer-typescript-tsc": "^2.12.0",
+    "@parcel/transformer-inline-string": "^2.12.0",
+    "parcel": "^2.12.0",
+    "@types/node": "^20.12.3",
+    "typescript": "^5.4.3",
+    "tslib": "^2.6.2",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0"
+  },
+  "scripts": {
+    "lint:js": "eslint src --ext .js,.ts",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "lint:html": "htmlhint -c .htmlhintrc src",
+    "lint": "npm run lint:js && npm run lint:html && npm run lint:css",
+    "start": "parcel -p 9000",
+    "build": "parcel build --no-scope-hoist --no-source-maps"
+  },
+  "source": "index.html",
+  "targets": {
+    "default": {
+      "sourceMap": {
+        "inline": true
+      }
+    }
+  },
+  "aurelia": {
+    "hmr": false
+  }
+}
