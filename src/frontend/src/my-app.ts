@@ -3,12 +3,11 @@ import { HttpClient } from '@aurelia/fetch-client';
 export class MyApp {
 
   public draft: string;
+  public response: string;
+
   private httpClient: HttpClient;
   private endPoint = "drafts";
 
-  /**
-   *
-   */
   constructor() {
     this.httpClient = new HttpClient();
 
@@ -21,11 +20,10 @@ export class MyApp {
 
   public async sendText(): Promise<void> {
     console.log('Sending text...');
-    console.log(this.draft);
 
     this.httpClient.post(this.endPoint, this.draft)
-      .then(response => response.json())
-      .then(users => console.log(users))
+      .then(response => response.text())
+      .then(text => this.response = text)
       .catch(error => console.error(error));
 
     console.log('Text sent successfully!');

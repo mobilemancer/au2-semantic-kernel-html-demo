@@ -20,14 +20,13 @@ namespace SKDemo.API
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
             // get the draft from the request body
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            _logger.LogInformation(requestBody);
-
-            var x = await new Agents.RefineDraft().Run(requestBody);
-
+            string draft = await new StreamReader(req.Body).ReadToEndAsync();
+            _logger.LogInformation(draft);
 
             // call AgentsService to make a revised draft
-            return new OkObjectResult(x);
+            var refinedDraft = await new Agents.RefineDraft().Run(draft);
+
+            return new OkObjectResult(refinedDraft);
         }
     }
 }
