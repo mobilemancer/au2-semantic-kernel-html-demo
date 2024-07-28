@@ -5,17 +5,17 @@ using Microsoft.Extensions.Logging;
 
 namespace SKDemo.API
 {
-    public class RefineDraft
+    public class SimplePrompt
     {
-        private readonly ILogger<RefineDraft> _logger;
+        private readonly ILogger<SimplePrompt> _logger;
 
-        public RefineDraft(ILogger<RefineDraft> logger)
+        public SimplePrompt(ILogger<SimplePrompt> logger)
         {
             _logger = logger;
         }
 
-        [Function(nameof(RefineDraft))]
-        public async Task<IActionResult> RunAsync([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "drafts")] HttpRequest req)
+        [Function(nameof(SimplePrompt))]
+        public async Task<IActionResult> RunAsync([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "simpleprompt")] HttpRequest req)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 

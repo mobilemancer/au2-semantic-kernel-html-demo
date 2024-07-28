@@ -1,11 +1,16 @@
-<h1>Semantic Kernel - Demo</h1>
+<import from="./pages/welcome-page.html"></import>
+<import from="./pages/1-simple-prompt/simple-prompt"></import>
+<import from="./pages/2-using-plugins/using-plugins"></import>
+<import from="./pages/3-chatbot/chat-bot"></import>
+<import from="./pages/about-page.html"></import>
 
-<h2>Enter Rough Draft</h2>
-<textarea id="jobAdText" rows="15" cols="150" value.bind="draft" style="width: 100%;"></textarea>
+<nav>
+  <a load="welcome-page">Welcome</a>
+  <a load="simple-prompt">Simple Prompt</a>
+  <a load="using-plugins">Using Plugins</a>
+  <a load="chat-bot">Chatbot</a>
+  <a load="about-page">About</a>
+</nav>
 
-<div class="row">
-    <button id="submit" click.trigger="sendText">Submit</button>
-</div>
+<au-viewport default="welcome-page"></au-viewport>
 
-<h2>Result</h2>
-<textarea id="result" rows="15" cols="150" value.bind="response"></textarea>

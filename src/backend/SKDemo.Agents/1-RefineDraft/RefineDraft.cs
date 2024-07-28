@@ -31,14 +31,12 @@ namespace SKDemo.Agents
 
 You are an expert job advert copy writer. You know everything about formatting a job advert so that people want to apply for the job. You make awesome job adverts from rough drafts!";
 
-            var summarize = kernel.CreateFunctionFromPrompt(prompt, executionSettings: new OpenAIPromptExecutionSettings { MaxTokens = 1000 });
+            var copywriterFunction = kernel.CreateFunctionFromPrompt(prompt, executionSettings: new OpenAIPromptExecutionSettings { MaxTokens = 1000 });
           
-            var result = await kernel.InvokeAsync(summarize, new()
+            var result = await kernel.InvokeAsync(copywriterFunction, new()
             {
                 ["input"] = draft
             });
-
-            Console.WriteLine(result);
 
             return result.ToString();
         }
