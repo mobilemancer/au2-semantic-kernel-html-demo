@@ -1,0 +1,4 @@
+<h1>Chat Bot</h1>
+
+<div class="spinner" if.bind="loading"></div>
+<textarea class="page-content" id="chat" rows="30" cols="150" value.bind="chat" keydown.trigger="handleKeydown($event)"  ref="chatTextarea"></textarea>

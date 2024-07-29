@@ -5,10 +5,10 @@ using System.Diagnostics;
 
 namespace SKDemo.Agents
 {
-    public class RefineDraft2
+    public class RefineDraftUsingPlugins
     {
         private Kernel _kernel;
-        public RefineDraft2()
+        public RefineDraftUsingPlugins()
         {
             var builder = Kernel.CreateBuilder();
 

@@ -1,8 +1,19 @@
-* {
+body{
   font-family: Lato, sans-serif;
-  font-size: 1.1em;
+  font-size: 20px;
+  margin: 0px;
 }
 
+textarea {
+  width: 100%;
+  font-size: 1.2rem
+}
+
+button{
+  font-size: large;
+}
+
+/* menu */
 nav {
   background: #eee;
   display: flex;
@@ -21,22 +32,45 @@ a:hover {
 .active {
   background-color: lightgray;
 }
+/* menu end */
 
-
+/* pages */
 h1 {
   text-align: center;
   color: indigo;
 }
 
-textarea {
-  width: 100%;
+.page-content{
+  margin: 0px 20px;
+  width: -webkit-fill-available;
 }
 
-.message {
-  background-color: lightblue;
-}
+/* page */
 
-.row {
+
+
+.button-row {
   display: flex;
   justify-content: right;
 }
+
+/* spinner */
+.spinner {
+  width: 100%;
+  height: 3px;
+  margin: 1px 0px;
+  background: linear-gradient(to right, #ccc 20%, #c818e3 50%, #ccc 80%);
+  background-size: 200% 100%;
+  animation: swish 2s linear infinite;
+}
+
+@keyframes swish {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* spinner end */

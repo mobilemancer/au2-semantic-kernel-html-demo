@@ -5,17 +5,17 @@ using Microsoft.Extensions.Logging;
 
 namespace SKDemo.API
 {
-    public class SimplePrompt
+    public class UsingPluginsFunction
     {
-        private readonly ILogger<SimplePrompt> _logger;
+        private readonly ILogger<UsingPluginsFunction> _logger;
 
-        public SimplePrompt(ILogger<SimplePrompt> logger)
+        public UsingPluginsFunction(ILogger<UsingPluginsFunction> logger)
         {
             _logger = logger;
         }
 
-        [Function(nameof(SimplePrompt))]
-        public async Task<IActionResult> RunAsync([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "simpleprompt")] HttpRequest req)
+        [Function(nameof(UsingPluginsFunction))]
+        public async Task<IActionResult> RunAsync([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "usingplugins")] HttpRequest req)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
@@ -24,7 +24,7 @@ namespace SKDemo.API
             _logger.LogInformation(draft);
 
             // call AgentsService to make a revised draft
-            var refinedDraft = await new Agents.RefineDraft().Run(draft);
+            var refinedDraft = await new Agents.RefineDraftUsingPlugins().Run(draft);
 
             return new OkObjectResult(refinedDraft);
         }
