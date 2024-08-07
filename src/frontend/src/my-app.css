@@ -4,9 +4,12 @@ body{
   margin: 0px;
 }
 
+input,
 textarea {
   width: 100%;
-  font-size: 1.2rem
+  font-size: 1.2rem;
+  margin: 10px 0px;
+  padding: 5px;
 }
 
 button{

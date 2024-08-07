@@ -8,7 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="MarkdownSharp" Version="2.0.5" />
-    <PackageReference Include="Microsoft.SemanticKernel" Version="1.16.0" />
+    <PackageReference Include="Microsoft.SemanticKernel" Version="1.16.2" />
+    <PackageReference Include="Microsoft.SemanticKernel.Abstractions" Version="1.16.2" />
+    <PackageReference Include="Microsoft.SemanticKernel.Agents.Abstractions" Version="1.16.2-alpha" />
+    <PackageReference Include="Microsoft.SemanticKernel.Agents.Core" Version="1.16.2-alpha" />
+    <PackageReference Include="Microsoft.SemanticKernel.Agents.OpenAI" Version="1.16.2-alpha" />
+    <PackageReference Include="Microsoft.SemanticKernel.Experimental.Agents" Version="1.16.2-alpha" />
   </ItemGroup>
 
 </Project>
