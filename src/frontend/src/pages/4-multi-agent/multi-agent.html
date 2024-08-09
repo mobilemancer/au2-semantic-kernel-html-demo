@@ -1,9 +1,9 @@
+<div class="spinner" if.bind="loading"></div>
 <h1>Multi Agent Chat</h1>
 
 <section class="page-content">
     <input type="text" value.bind="input" keydown.trigger="handleKeydown($event)">
-    <div class="spinner" if.bind="loading"></div>
-    <textarea id="chat" rows="30" cols="150" value.bind="chat" ref="chatTextarea"></textarea>
+    <textarea id="chat" rows="28" cols="150" value.bind="chat" ref="chatTextarea"></textarea>
 
     <div class="button-row">
         <button click.trigger="clearChatArea">Clear</button>

@@ -36,8 +36,6 @@ export class MultiAgent {
       .then((response) => response.text())
       .then((text) => {
         this.chat += `${text}\n`;
-        // this.saveDiff();
-        // this.scrollToBottom();
         this.loading = false;
       })
       .catch((error) => {

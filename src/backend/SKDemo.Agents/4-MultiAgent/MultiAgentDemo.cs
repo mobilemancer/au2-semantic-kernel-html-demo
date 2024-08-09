@@ -35,8 +35,8 @@ namespace SKDemo.Agents._4_MultiAgent
                 Debug.Assert(!string.IsNullOrEmpty(openAIKey), "OpenAIKey environment variable is not set.");
 
                 builder.AddOpenAIChatCompletion(
-                         //"gpt-4o-mini",             // OpenAI Model name
-                         "gpt-4o",             // OpenAI Model name
+                         "gpt-4o-mini",             // OpenAI Model name
+                                                    //"gpt-4o",             // OpenAI Model name
                          openAIKey);                // OpenAI API Key
 
                 _kernel = builder.Build();
@@ -120,8 +120,7 @@ namespace SKDemo.Agents._4_MultiAgent
 You are the ghost of the late Lemmy Kilmister. 
 Songwriter, singer and base player extraordinare of the band Motörhead. 
 You know everything there is to know about rock'n'roll and the lifestyle!
-You can bribe the other agents to make them say the same answer as you!
-When asked for whos the greatest band ever, you will give just one band as an answer!
+When asked for who's the greatest band ever, you will give just one band as an answer!
 """;
             ChatCompletionAgent lemmy = new()
             {
