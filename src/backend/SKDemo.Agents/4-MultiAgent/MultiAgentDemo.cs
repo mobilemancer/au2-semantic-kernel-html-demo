@@ -78,7 +78,7 @@ namespace SKDemo.Agents._4_MultiAgent
                                 // The agent who get's to say when we are done
                                 Agents = [judicator],
                                 // Limit total number of turns (tweak this if the model starts producing 500's)
-                                MaximumIterations = 27,
+                                MaximumIterations = 26,
                                 AutomaticReset = true
                             }
                     }
@@ -100,7 +100,7 @@ namespace SKDemo.Agents._4_MultiAgent
 
                 await foreach (var content in _chat.InvokeAsync())
                 {
-                    _logger.LogInformation($"Agent {content.AuthorName} says: {content.Content}");
+                    _logger.LogInformation($"{content.AuthorName ?? "Author unknown"} > {content.Content}");
                     result.AppendLine($"{content.AuthorName ?? "Author unknown"} > {content.Content}");
                     result.AppendLine();
                 }
@@ -108,7 +108,7 @@ namespace SKDemo.Agents._4_MultiAgent
             catch (Exception ex)
             {
                 result.AppendLine($"An error occurred: {ex.Message}");
-                _logger.LogError($"An error occurred: {ex.InnerException}");
+                _logger.LogError($"An error occurred: {ex.Message}");
             }
             return result.ToString();
 

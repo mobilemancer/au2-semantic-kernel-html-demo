@@ -23,6 +23,7 @@ export class MultiAgent {
   public handleKeydown(event: KeyboardEvent): void {
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
+      this.clearChatArea();
       this.sendText();
     }
   }
